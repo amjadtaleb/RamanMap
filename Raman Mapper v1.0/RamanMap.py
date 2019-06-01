@@ -177,7 +177,7 @@ class RamanMap:
         sublist = []
         totallist = []
         for i in itertools.product(range(self.dim), repeat = 2):
-    #        print(i)
+
             if i[1] == 0:
                 if len(sublist) != 0:
                     totallist.append(sublist)
@@ -332,11 +332,11 @@ class RamanMap:
         pipeline.fit(transformed_data)
         image = self.imageKeepOrder(pipeline.predict(transformed_data))
         return dict(image = [image.reshape(dim,dim)], index = [self.indices]), dict(x = range(n_pca), top = pca.explained_variance_)
-#        return image
 
-#rm = RamanMap('info.txt') #instanciate a RamanMap
+
 ## =============================================================================
 ## ~ example usage:
+#rm = RamanMap('info.txt') #instanciate a RamanMap
 #for i in range(2):
 #    s1,sx = rm.sliceMap(i)
 #    plt.figure(figsize=(11.69,4.14))
