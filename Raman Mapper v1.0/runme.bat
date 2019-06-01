@@ -12,4 +12,3 @@ echo _______
 
 echo                                                                         ::
 bokeh serve  --show bokeh_app.py
-rem bokeh serve  --show temp.py
