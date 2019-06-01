@@ -1,0 +1,26 @@
+D:\Dropbox\QnDG\Victor Marzoa\MoS2\MoS2_SiSiOx_VM_9\Flake 2525\Raman
+Map_RamanSemrock_50x50points_20um2_500ms_wavelength_FVB_1
+asc
+15
+#######################################################
+Add new tab: select bymaterial:
+use material image lable.tolist() as another item
+add drop menu: options from materials radiogroup
+#######################################################
+Folder
+File
+excension
+Notes:
+do not add spaces at the ends of lines
+do not change line order
+do not add a . before the extension
+
+old ----------------------------------------------
+C:\Users\amjad.altaleb\Dropbox\QnDG\Maria\Grafeno Cu 11032019\Map 2
+Graphene_Map_RamanSemrock_50x50points_20um2_1s_2
+
+
+H:\MoS2-PegBag-Map\victor\MoS2_SiSiOx_VM_9\Flake 2525\Raman
+old ----------------------------------------------
+Map_RamanSemrock_50x50points_20um2_500ms_wavelength_multitrack_1
+Map_RamanSemrock_50x50points_20um2_500ms_wavelength_FVB_1
