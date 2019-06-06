@@ -1,0 +1,4 @@
+Folder
+File_name
+extension
+# number of slices
