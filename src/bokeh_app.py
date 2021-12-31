@@ -12,7 +12,8 @@ from bokeh.palettes import brewer
 # ~ Initial Values
 # =============================================================================
 # instanciate RamanMap
-rm = RamanMap.RamanMap('Graphene_Map_RamanSemrock_50x50points_20um2_1s_2.asc')
+# rm = RamanMap.RamanMap('Graphene_Map_RamanSemrock_50x50points_20um2_1s_2.asc')
+rm = RamanMap.RamanMap('TianzeHu.txt')
 # =============================================================================
 # prepare ColumnDataSources
 dim = rm.dim
@@ -177,23 +178,21 @@ def update_input_multi(user_source, visible, available, lab, col):
     update selected visible spectra
     color visible spectra according to labels if predicted image
     '''
-    return CustomJS(args=dict(user_source=user_source, visible=visible, available=available, lab=lab, col=col), code='''
+    return CustomJS(args=dict(user_source=user_source, visible=visible, available=available, lab=lab, col=col, dim=dim), code='''
             var data = user_source.data;
             var spectra = visible.data;
             var all_spectra = available.data;
             var labels = lab.data['image'][0];
             var cols = col.data['colors']
-            //const n_mat = n_mat;
-
-            console.log(cols);
             
+            //const n_mat = n_mat;
+            //console.log(cols);
             const x = parseInt(cb_obj.x);
             const y = parseInt(cb_obj.y);
             
-            if((x >= 0) && (y >= 0) && (x < 50) && (y < 50)){
-            const z = (x+1)+(y*50);
+            if((x >= 0) && (y >= 0) && (x < dim) && (y < dim)){
+            const z = (x+1)+(y*dim);
             const label = labels[z-1];
-            
             
             // check if the only available data is (0,0) then replace it with the first data point the user clicks
                 if((data['x'].length == 1) && (data['x'] == 0.5) && (data['y'] == 0.5)){
@@ -217,7 +216,7 @@ def update_input_multi(user_source, visible, available, lab, col):
                     spectra['label'].push(cols[label]);
                     spectra['index'].push(z);
                     
-                    console.log('label:', label);
+                    // console.log('label:', label);
                     
                     visible.change.emit();
                     user_source.change.emit();
